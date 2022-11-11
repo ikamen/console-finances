@@ -100,23 +100,30 @@ console.log("Financial Analysis");
 console.log("----------------------------");
 console.log("Total Months: " + finances.length);
 
+//Iterate through the main array
 for (var i = 0; i < finances.length; i++) {
     if (finances[i][1] > 0) {
+        //Add the profits
         profit = profit + finances[i][1];
     } 
     else {
+        //Add the losses
         loss = loss + finances[i][1];
     }
     if (i > 0){
+        //Calculate changes per month and add it up
         change_per_month = finances[i][1] - finances[i-1][1];
         accumulated_change = accumulated_change + change_per_month;
     }
+    
     if (change_per_month >= 0){
+        //Record the greated increase of profits per month
         if (change_per_month > greatest_increase_per_month) {
             greatest_increase_per_month = change_per_month;
             greatest_increase_month = finances[i][0];
         }
     } else {
+        //Record the greated decrease of profits per month
         if (Math.abs(change_per_month) > Math.abs(greatest_decrease_per_month)) {
             greatest_decrease_per_month = change_per_month;
             greatest_decrease_month = finances[i][0];
