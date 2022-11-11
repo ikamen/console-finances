@@ -132,8 +132,8 @@ for (var i = 0; i < finances.length; i++) {
 }
 
 console.log("Total: $" + (profit+loss));
-console.log("Average  Change: $ " + (accumulated_change/finances.length).toFixed(2));
-console.log("Greatest Increase in Profits: " + greatest_increase_month + " (" + greatest_increase_per_month + ")");
-console.log("Greatest Decrease in Profits: " + greatest_decrease_month + " (" + greatest_decrease_per_month + ")");
+console.log("Average  Change: $" + (accumulated_change/(finances.length-1)).toFixed(2));
+console.log("Greatest Increase in Profits: " + greatest_increase_month + " ($" + greatest_increase_per_month + ")");
+console.log("Greatest Decrease in Profits: " + greatest_decrease_month + " ($" + greatest_decrease_per_month + ")");
 
 
